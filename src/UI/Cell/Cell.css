@@ -1,0 +1,14 @@
+.buttonCell {
+    width: 70px;
+    height: 70px;
+    background-color:green;
+    border-width: 1px;
+    border: 1px solid black;
+    color:red;
+  
+}
+.buttonCell:hover {
+    background-color: #4CAF50; 
+    color:white;
+    
+}
