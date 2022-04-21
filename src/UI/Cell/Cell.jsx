@@ -2,10 +2,13 @@ import React from 'react'
 import "./Cell.css"
   
 
-function  Cell  (props)  {
+
+
+function Cell(props)  {
      return (
        
-            <button className = "buttonCell" onClick={props.increaseCount}>{props.children}</button>
+            <button className = "buttonCell" onClick = {() => {props.increaseCount();
+                props.toShot()}}>{props.children}</button>
          
     );
 };

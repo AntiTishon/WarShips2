@@ -1,11 +1,11 @@
 const widthDeck = 10;
 const heithDeck = 10;
-const numFourDeck = 1;
-const numThreeDeck = 2;
-const numTwoDeck = 3;
-const numOneDeck = 4;
+const numFourDeck = 4;
+const numThreeDeck = 3;
+const numTwoDeck = 2;
+const numOneDeck = 1;
 
-function createMasShips (fourDeck=numFourDeck, threeDeck=numThreeDeck, twoDeck=numTwoDeck, oneDeck=numOneDeck) {
+function createShipsArray (fourDeck = numFourDeck, threeDeck  =numThreeDeck, twoDeck = numTwoDeck, oneDeck = numOneDeck) {
     const masShips = [];
     createDeckShips(masShips, 4, fourDeck);
     createDeckShips(masShips, 3, threeDeck);
@@ -14,23 +14,23 @@ function createMasShips (fourDeck=numFourDeck, threeDeck=numThreeDeck, twoDeck=n
     return masShips;
 }
 
-function createDeckShips (mas, numDeck, countDeck) {
-    for (let i=0; i<countDeck; i++) {
-        mas.push (addNewShip(mas, numDeck))
+function createDeckShips(mas, numDeck, countDeck) {
+    for (let i = 0; i < countDeck; i++) {
+        mas.push(addNewShip(mas, numDeck))
     }
 }
 
 function addNewShip(mas, numDeck) {
     let newShip=[];
-    do { newShip = generateShip (10, numDeck)
+    do { newShip = generateShip(10, numDeck)
     } while (collision(mas, newShip));
     return newShip;    
 }
 
 function collision(masShips, newShip) {
-    for (let i=0; i<masShips.length; i++) {
-        for (let j=0; j<newShip.length; j++) {
-            if (masShips[i].includes (newShip[j])) {
+    for (let i = 0; i < masShips.length; i++) {
+        for (let j = 0; j < newShip.length; j++) {
+            if (masShips[i].includes(newShip[j])) {
                 return true
             }
         }
@@ -51,12 +51,12 @@ function generateShip(boardSize = 10, shipLength = 3) {
     let newShipLocations = [];
     for (let i = 0; i < shipLength; i++) {
         if (direction === 1) {
-                newShipLocations.push((row + "" + (col + i)));
+                newShipLocations.push(+(row + "" + (col + i)));
             } else {
-                newShipLocations.push((row + i) + "" + col);
+                newShipLocations.push(+((row + i) + "" + col));
             }
         }
         return newShipLocations;
     }
 
-export default createMasShips;
+export default createShipsArray;

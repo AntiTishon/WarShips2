@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 function mapStateToProps(state) {
     return {
-        countValue: state.count,
+        countValue: state.shots,
     };
 }
 
