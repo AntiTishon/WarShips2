@@ -1,0 +1,14 @@
+.clsLeftField {
+    background-color: rgb(194, 207, 218);
+    margin: 0%;
+    width: auto;
+}
+
+.clsLeftField div {
+    border-width: 0ch;
+}
+
+.clsLeftField a {
+    color: blueviolet;
+    text-decoration: none;
+}

@@ -1,7 +1,10 @@
 import {connect} from "react-redux";
-import Cell from "./Cell"
+import { selectorShipsOnField } from "../../store/selectors/Selectors-Cell";
+import {Cell} from "./Cell"
 
-const increaseAction = {type: "increase"};
+function increaseAction()  {
+    return {type: "increase"};
+}
 //const tryShotAction = {type: "toShot", celll: 0}
 
 function getShot(numberCell) {
@@ -14,17 +17,17 @@ function getShot(numberCell) {
 
 function mapStateToProps(state) {
     return {
-        shipsOnField: state.ships,
+        shipsOnField: selectorShipsOnField(state)
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-       toShot: function() {
-           return dispatch(getShot());
+       toShot: function(numCell) {
+           return dispatch(getShot(numCell));
         },   
         increaseCount: function() {
-            return dispatch(increaseAction)
+            dispatch(increaseAction())
         }
        
     };
@@ -39,8 +42,8 @@ function mapDispatchToProps(dispatch) {
 }*/
 
 
-const W_Cell = connect(
+const CellContainer = connect(
     mapStateToProps,
     mapDispatchToProps
 )(Cell);
-export default W_Cell;
+export  {CellContainer};

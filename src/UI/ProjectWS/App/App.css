@@ -1,0 +1,46 @@
+.clsApp {
+    display: inline-grid;
+    width: 4000px;
+    height: 2900px;
+    
+    
+    grid-template-columns:600px 1fr 600px;
+    grid-template-rows: 600px 1fr 400px;
+    grid-template-areas:
+
+    "H H H"
+    "L C R"
+    "L B R"
+    ;
+    font-size: 65px;
+    margin: 0%;
+    
+}
+
+.clsBottom {
+    grid-area: B;
+    
+}
+
+.clsHeader {
+    grid-area: H;
+    
+}
+
+.clsLeftField {
+    grid-area: L;
+   
+
+}
+
+.clsRightBar {
+    grid-area: R;
+   
+}
+
+.innerContent {
+    grid-area: C;
+    background-color: bisque;
+    width: auto;
+    margin: 0%;
+}

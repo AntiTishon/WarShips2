@@ -6,12 +6,12 @@ const numTwoDeck = 2;
 const numOneDeck = 1;
 
 function createShipsArray (fourDeck = numFourDeck, threeDeck  =numThreeDeck, twoDeck = numTwoDeck, oneDeck = numOneDeck) {
-    const masShips = [];
-    createDeckShips(masShips, 4, fourDeck);
-    createDeckShips(masShips, 3, threeDeck);
-    createDeckShips(masShips, 2, twoDeck);
-    createDeckShips(masShips, 1, oneDeck);
-    return masShips;
+    const shpsArray = [];
+    createDeckShips(shpsArray, 4, fourDeck);
+    createDeckShips(shpsArray, 3, threeDeck);
+    createDeckShips(shpsArray, 2, twoDeck);
+    createDeckShips(shpsArray, 1, oneDeck);
+    return shpsArray;
 }
 
 function createDeckShips(mas, numDeck, countDeck) {
@@ -27,10 +27,10 @@ function addNewShip(mas, numDeck) {
     return newShip;    
 }
 
-function collision(masShips, newShip) {
-    for (let i = 0; i < masShips.length; i++) {
+function collision(shpsArray, newShip) {
+    for (let i = 0; i < shpsArray.length; i++) {
         for (let j = 0; j < newShip.length; j++) {
-            if (masShips[i].includes(newShip[j])) {
+            if (shpsArray[i].includes(newShip[j])) {
                 return true
             }
         }

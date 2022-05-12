@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Field.css"
-import W_Cell from '../Cell/W_Cell.jsx';
-import W_NumShots from '../NumShots/NumShots';
+import {CellContainer} from '../Cell/CellContainer.jsx';
+import {NumShortsContainer} from '../NumShots/NumShotsContainer.jsx';
+
+
 
 
 function  Field(props)  {
@@ -9,14 +11,17 @@ function  Field(props)  {
      return (
          <>
          <div>
-            {[... new Array(100)].map((_, ind) => (<W_Cell key = {ind} idd = {ind}> {ind} </W_Cell>))}
+            {[... new Array(100)].map((_, ind) => (<CellContainer key = {ind} numCell = {ind}> {ind} </CellContainer>))}
                     
               
             
          </div>
-         <W_NumShots>{props.countValue}</W_NumShots>
+         
+         <NumShortsContainer>
+            {props.countValue}
+         </NumShortsContainer>
          </>
     );
 };
 
-export default Field;
+export  {Field};

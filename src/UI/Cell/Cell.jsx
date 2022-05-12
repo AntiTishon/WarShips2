@@ -8,10 +8,10 @@ function Cell(props)  {
      return (
        
             <button className = "buttonCell" onClick = {() => {props.increaseCount();
-                props.toShot()}}>{props.children}</button>
+                props.toShot(props.numCell)}}>{props.children}</button>
          
     );
 };
    
 
-export default Cell;
+export {Cell};

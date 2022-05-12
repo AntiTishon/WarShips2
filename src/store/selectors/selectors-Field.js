@@ -1,0 +1,1 @@
+export const selectorCountShots = state => state.shots

@@ -1,4 +1,4 @@
-import findShot from "../../UI/Cell/findShot";
+import {findShot} from "../../UI/Cell/findShot";
 import markFindShot from "../../UI/Cell/markFindShot";
 import initialState from "../initialState/initialState";
 
@@ -12,10 +12,11 @@ function counter(state=initialState(), action) {
         return {...state, shots: shots + 1};
     case "toShot": {
             
-            if (findShot(ships, 10)) {
-                console.log ("fooooooo")
-                return {...state, ships: markFindShot(ships, 10)}
-            
+            if (findShot(ships, action.numCell)) {
+
+                console.log (action.numCell)
+                return {...state, ships: markFindShot(ships, action.numCell)}
+         
         }
     }
     default:
@@ -25,4 +26,4 @@ function counter(state=initialState(), action) {
 
 
 
-export default counter;
+export {counter};

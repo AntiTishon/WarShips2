@@ -1,8 +1,7 @@
 import React from 'react'
 import "./Counter.css"
 
-
-const  NumShots = (props) => {
+function  NumShots (props)  {
 
      return (
          <h1 id = "Counter">Shorts:{props.children}</h1>
@@ -10,4 +9,4 @@ const  NumShots = (props) => {
 };
    
 
-export default NumShots;
+export {NumShots};

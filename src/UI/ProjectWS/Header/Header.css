@@ -1,0 +1,10 @@
+.clsHeader {
+    background-image: url("WS2.jpg");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0%;
+    width: auto;
+}

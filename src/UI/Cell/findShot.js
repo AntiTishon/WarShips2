@@ -9,4 +9,4 @@ function findShot(masShips, numCell) {
     return false
 }
 
-export default findShot;
+export {findShot};
